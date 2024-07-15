@@ -21,7 +21,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <ClerkProvider>
+    <ClerkProvider
+      afterSignOutUrl="/"
+      appearance={{
+        variables: {
+          colorPrimary: "#624cf5",
+        },
+      }}
+    >
       <html lang="en">
         <body className={cn("font-IBMPlex antialiased", IBMPlex.variable)}>
           {children}
@@ -30,6 +37,5 @@ export default function RootLayout({
     </ClerkProvider>
   );
 }
-
 
 // Minuto 27:40  https://www.youtube.com/watch?v=Ahwoks_dawU&t=103s
